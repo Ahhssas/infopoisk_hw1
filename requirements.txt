@@ -1,0 +1,7 @@
+pandas
+numpy
+scipy
+nltk
+razdel
+pymorphy3
+tqdm
