@@ -66,17 +66,19 @@ pip install -r requirements.txt
 ```
 Пример:
 ```
-python main.py \
-  --input data/jokes_1500.csv \
-  --text-col text \
-  --query "муж жена" \
-  --backend dict_bm25 \
-  --top-k 5
+from main import run_search
+
+run_search(
+    input_path="jokes_1500.csv",
+    text_col="text",
+    query="муж жена",
+    backend="dict_bm25",
+    top_k=5,
+)
 ```
-Параметр --backend определяет используемый индекс
-```
-dict_freq
-dict_bm25
-matrix_freq
-matrix_bm25
-```
+Параметр `--backend` определяет тип используемого индекса:
+
+- `dict_freq` — частотный поиск по инвертированному индексу
+- `dict_bm25` — BM25 по инвертированному индексу
+- `matrix_freq` — поиск по TF-матрице
+- `matrix_bm25` — BM25 по матричному представлению
