@@ -65,7 +65,7 @@ PS. Позже я поняла, что это сборник самых НЕсм
 pip install -r requirements.txt
 ```
 Пример:
-```
+```python
 from main import run_search
 
 run_search(
